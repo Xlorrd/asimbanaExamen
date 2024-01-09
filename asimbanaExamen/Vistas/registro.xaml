@@ -16,7 +16,7 @@
             HorizontalTextAlignment="Start"
             FontSize="20"
             FontAttributes="Bold"
-            TextColor="red"
+            TextColor="Blue"
    />
         <Grid>
             <Grid.RowDefinitions>
