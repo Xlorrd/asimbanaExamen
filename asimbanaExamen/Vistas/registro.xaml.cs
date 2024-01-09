@@ -59,4 +59,30 @@ public partial class registro : ContentPage
 
         return pagoTotal;
     }
+
+    private void txtMontoInicial_TextChanged(object sender, TextChangedEventArgs e)
+    {
+        validacion(txtMontoInicial.Text);
+          
+    }
+    private void validacion(string valorCampo)
+    {
+        try
+        {
+            if (!string.IsNullOrWhiteSpace(valorCampo))
+            {
+                double monto=Convert.ToDouble(valorCampo);
+                if (monto > 1500 || monto < 0) {
+                    DisplayAlert("Valor incorrecto", "Ingrese valor menor al costo de curso", "ok");
+                    txtMontoInicial.Text = "";
+                }
+              
+            }
+        }
+        catch (Exception)
+        {
+
+            throw;
+        }
+    }
 }

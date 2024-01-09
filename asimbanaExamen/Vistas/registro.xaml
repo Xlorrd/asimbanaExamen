@@ -82,6 +82,7 @@
             <Entry x:Name="txtMontoInicial"
            Placeholder="Ingrese monto inicial"
                    Keyboard="Numeric"
+                   TextChanged="txtMontoInicial_TextChanged"
            Grid.Row="3"
            Grid.Column="1" />
 
