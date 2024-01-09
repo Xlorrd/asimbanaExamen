@@ -46,10 +46,10 @@ public partial class registro : ContentPage
     {
 
         double cuotas = (1500 - monto) / 4;
-         double pagoMensual = ((cuotas * 0.04) + cuotas) * 4;
-  
+        double pagoMensual = ((cuotas * 0.04) + cuotas);
+
         //double pagoMensual = (1500 - monto )/4 +( 0.04*1500);
-    
+
 
         return pagoMensual;
     }
@@ -57,8 +57,8 @@ public partial class registro : ContentPage
     {
 
         double cuotas = (1500 - monto) / 4;
-        double pagoMensual = ((cuotas * 0.04) + cuotas) * 4;
-        double pagoTotal = pagoMensual + monto;
+        double pagoMensual = ((cuotas * 0.04) + cuotas) ;
+        double pagoTotal =( pagoMensual *4 )+ monto;
         //double pagoMensual = (1500 - monto) / 4 + (0.04 * 1500);
         //double pagoTotal =(pagoMensual * 4) +monto;
 
