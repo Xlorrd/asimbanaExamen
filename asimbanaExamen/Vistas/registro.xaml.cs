@@ -45,8 +45,10 @@ public partial class registro : ContentPage
     private double CalcularMensual(double monto)
     {
 
+        double cuotas = (1500 - monto) / 4;
+         double pagoMensual = ((cuotas * 0.04) + cuotas) * 4;
   
-        double pagoMensual = (1500 - monto )/4 +( 0.04*1500);
+        //double pagoMensual = (1500 - monto )/4 +( 0.04*1500);
     
 
         return pagoMensual;
@@ -54,8 +56,11 @@ public partial class registro : ContentPage
     private double CalcularTotal(double monto)
     {
 
-        double pagoMensual = (1500 - monto) / 4 + (0.04 * 1500);
-        double pagoTotal =(pagoMensual * 4) +monto;
+        double cuotas = (1500 - monto) / 4;
+        double pagoMensual = ((cuotas * 0.04) + cuotas) * 4;
+        double pagoTotal = pagoMensual + monto;
+        //double pagoMensual = (1500 - monto) / 4 + (0.04 * 1500);
+        //double pagoTotal =(pagoMensual * 4) +monto;
 
         return pagoTotal;
     }
