@@ -11,10 +11,8 @@ public partial class registro : ContentPage
     private void btnCalcular_Clicked(object sender, EventArgs e)
     {
     double monto=Convert.ToDouble(txtMontoInicial.Text);
-        
-        double porcentaje = 1500 * 0.4;
-        double pagoMensual = (1500 - monto / 4) + porcentaje;
-        double pagoTotal= monto+pagoMensual*4;
+        double pagoMensual=(CalcularMensual(monto));
+     
         txtPagoMensual.Text= Convert.ToString(pagoMensual);
     }
 
@@ -29,6 +27,7 @@ public partial class registro : ContentPage
         string nombre = txtNombre.Text;
         string apellido = txtApellido.Text;
         string edad = txtEdad.Text;
+        double montoTotal=  CalcularTotal( Convert.ToDouble(txtMontoInicial.Text));
 
         string mensaje = $"Resumen:\n\n" +
                      $"Nombre: {nombre}\n" +
@@ -38,8 +37,26 @@ public partial class registro : ContentPage
                      $"Ciudad: {ciudad}\n" +
                      $"País: {pais}\n" +
                      $"Monto Inicial: {montoInicial}\n" +
-                     $"Pago Mensual: {pagoMensual}\n";
+                     $"Pago Mensual: {pagoMensual}\n"+
+                      $"Pago Total: {montoTotal}\n";
 
         DisplayAlert("Datos Capturados", mensaje, "OK");
+    }
+    private double CalcularMensual(double monto)
+    {
+
+  
+        double pagoMensual = (1500 - monto )/4 +( 0.04*1500);
+    
+
+        return pagoMensual;
+    }
+    private double CalcularTotal(double monto)
+    {
+
+        double pagoMensual = (1500 - monto) / 4 + (0.04 * 1500);
+        double pagoTotal =(pagoMensual * 4) +monto;
+
+        return pagoTotal;
     }
 }

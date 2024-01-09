@@ -81,6 +81,7 @@
            Grid.Column="0" />
             <Entry x:Name="txtMontoInicial"
            Placeholder="Ingrese monto inicial"
+                   Keyboard="Numeric"
            Grid.Row="3"
            Grid.Column="1" />
 
@@ -133,6 +134,7 @@
            Grid.Column="2" />
             <Entry x:Name="txtEdad"
            Placeholder="Ingrese edad"
+                   Keyboard="Numeric"
            Grid.Row="1"
            Grid.Column="2" />
 
